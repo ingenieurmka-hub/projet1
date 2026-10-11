@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos formations – TechnoAcademy, Lubumbashi</title>
+<meta name="description" content="9 formations pratiques à Lubumbashi : informatique, bureautique, marketing digital, programmation, design, anglais, journalisme, art oratoire et esthétique. Certificat inclus.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nos formations – TechnoAcademy">
+<meta property="og:description" content="Formations pratiques d'un mois, à partir de 20 $. Certificat inclus.">
+<meta property="og:image" content="MEDIA/cout.jpeg">
+<link rel="icon" href="MEDIA/logo.jpeg">
+<script>
+  try {
+    const t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --primary:#0f172a;--accent-blue:#2563eb;
+  --cta:#c2410c;--cta-hover:#9a3412;--wa:#075E54;--wa-hover:#054a42;
+  --text:#334155;--muted:#64748b;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;
+  --r-md:12px;--r-lg:16px;--sh-sm:0 1px 3px rgba(0,0,0,.05);--sh-md:0 4px 12px -2px rgba(0,0,0,.08);
+}
+[data-theme="dark"]{
+  --primary:#f8fafc;--accent-blue:#60a5fa;--text:#cbd5e1;--muted:#94a3b8;
+  --bg:#0f172a;--card:#1e293b;--border:#334155;--sh-sm:0 1px 3px rgba(0,0,0,.3);--sh-md:0 4px 12px -2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,sans-serif}
+button,a,summary,.card{transition:background-color .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s}
+body{background:var(--bg);color:var(--text);line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
+:focus-visible{outline:3px solid var(--accent-blue);outline-offset:2px}
+img{max-width:100%;height:auto}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;width:100%}
+
+header{background:var(--card);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
+.logo img{height:42px;width:auto;display:block}
+nav{display:flex;gap:12px;align-items:center}
+nav a{text-decoration:none;color:var(--text);font-weight:600;font-size:14px;padding:8px 14px;border-radius:8px}
+nav a:hover,nav a[aria-current]{background:var(--border)}
+nav a.signup{background:var(--cta);color:#fff}
+nav a.signup:hover{background:var(--cta-hover)}
+.theme-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;gap:6px;align-items:center}
+.theme-btn:hover{background:var(--border)}
+
+.page-hero{background:var(--card);padding:44px 24px 36px;text-align:center;border-bottom:1px solid var(--border)}
+.page-hero h1{font-size:2.2rem;font-weight:800;color:var(--primary);line-height:1.3;margin-bottom:10px}
+.page-hero p{color:var(--muted);max-width:640px;margin:0 auto}
+.session{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-top:20px;padding:12px 22px;border-radius:50px;background:var(--bg);border:1px solid var(--border);font-size:14px;font-weight:600;color:var(--primary)}
+.session i{color:var(--cta);margin-right:6px}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:36px auto 0}
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);padding:18px 20px;box-shadow:var(--sh-sm)}
+.step b{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--cta);color:#fff;align-items:center;justify-content:center;font-size:14px;margin-bottom:8px}
+.step h2{font-size:16px;color:var(--primary);margin-bottom:2px}
+.step p{font-size:14px;color:var(--muted)}
+
+main{flex:1;padding:36px 0 56px}
+.search{position:relative;max-width:460px;margin:0 auto 28px}
+.search i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search input{width:100%;padding:13px 16px 13px 42px;border-radius:50px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:15px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.media{height:210px;background:#000}
+.media img,.media video{width:100%;height:100%;object-fit:cover;display:block}
+.media.icon{background:linear-gradient(135deg,#1d4ed8,#0f172a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:64px}
+.info{padding:20px;display:flex;flex-direction:column;flex:1}
+.info h2{font-size:18px;color:var(--primary);margin-bottom:6px;display:flex;gap:10px;align-items:center}
+.info h2 i{color:var(--accent-blue)}
+.info p{font-size:14px;color:var(--muted);flex:1}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.meta span{font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--border);border-radius:50px;padding:4px 12px;color:var(--text)}
+.meta .price{background:var(--cta);border-color:var(--cta);color:#fff;font-size:13px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+@media(max-width:480px){.actions{grid-template-columns:1fr}}
+.link{display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 16px;border-radius:8px;text-align:center}
+.link:hover{opacity:.9}
+.l-main{background:var(--cta)}.l-main:hover{background:var(--cta-hover);opacity:1}
+.l-wa{background:var(--wa)}.l-wa:hover{background:var(--wa-hover);opacity:1}
+#none{display:none;text-align:center;color:var(--muted);padding:32px}
+
+.cta-band{background:var(--card);border-top:1px solid var(--border);padding:48px 24px;text-align:center}
+.cta-band h2{font-size:1.6rem;color:var(--primary);margin-bottom:8px}
+.cta-band p{color:var(--muted);margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cta);color:#fff;text-decoration:none;font-weight:700;border-radius:50px;padding:14px 32px;font-size:15px;border:2px solid var(--cta)}
+.btn:hover{background:var(--cta-hover);border-color:var(--cta-hover)}
+.btn-line{background:transparent;border-color:#64748b}
+.btn-line:hover{background:#1e293b;border-color:#64748b}
+
+footer{background:#0f172a;color:#cbd5e1;padding:48px 24px 24px}
+.foot{max-width:1200px;margin:0 auto 32px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+.foot h3{color:#fff;font-size:16px;margin-bottom:10px}
+.foot p{font-size:14px;margin-bottom:8px}
+.foot a{color:#cbd5e1}
+.foot .btn{margin-top:12px;padding:12px 24px;color:#fff}
+.social{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:14px}
+.copy{text-align:center;border-top:1px solid #1e293b;padding-top:20px;font-size:13px;max-width:1200px;margin:0 auto}
+@media(max-width:800px){.foot{grid-template-columns:1fr}}
+@media(max-width:600px){
+  header{padding:10px 16px;flex-direction:column;gap:8px;position:static}
+  nav{flex-wrap:wrap;justify-content:center}
+  .page-hero h1{font-size:1.6rem}.media{height:190px}
+}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:1100;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:14px 18px;border-radius:50px;display:flex;gap:8px;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,.3);padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+.wa-float:hover{background:var(--wa-hover)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><img src="MEDIA/logo.jpeg" alt="Logo TechnoAcademy" width="120" height="42"></a>
+  <nav aria-label="Navigation principale">
+    <button class="theme-btn" id="themeToggle" type="button" aria-label="Changer de thème">
+      <i class="fa-solid fa-moon" aria-hidden="true"></i> <span>Mode sombre</span>
+    </button>
+    <a href="index.html">Accueil</a>
+    <a href="formations.html" aria-current="page">Formations</a>
+    <a href="register.php" class="signup">S'inscrire</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1>Nos formations</h1>
+  <p>9 formations pratiques d'un mois, à partir de 20 $. Chaque formation se termine par un certificat.</p>
+  <div class="session">
+    <span><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Prochaine session : 15 octobre</span>
+    <span><i class="fa-solid fa-users" aria-hidden="true"></i>50 places disponibles</span>
+    <span><i class="fa-solid fa-clock" aria-hidden="true"></i>Centre ouvert lundi, mercredi et samedi</span>
+  </div>
+  <div class="wrap">
+    <div class="steps" style="text-align:left">
+      <div class="step"><b>1</b><h2>Choisissez</h2><p>Trouvez la formation qui correspond à votre projet.</p></div>
+      <div class="step"><b>2</b><h2>Inscrivez-vous</h2><p>Créez votre compte en quelques minutes.</p></div>
+      <div class="step"><b>3</b><h2>Apprenez</h2><p>Suivez les cours, réalisez vos projets, recevez votre certificat.</p></div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <label for="q" class="sr-only">Rechercher une formation ou une compétence</label>
+      <input type="search" id="q" placeholder="Rechercher une formation ou une compétence…">
+    </div>
+    <div class="grid" id="list"></div>
+    <p id="none" role="status">Aucune formation ne correspond à votre recherche.</p>
+  </div>
+</main>
+
+<section class="cta-band">
+  <h2>Prêt à commencer ?</h2>
+  <p>Inscrivez-vous maintenant : la prochaine session commence le 15 octobre.</p>
+  <a href="register.php" class="btn"><i class="fa-solid fa-rocket" aria-hidden="true"></i> S'inscrire maintenant</a>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>
+      <h3>À propos de TechnoAcademy</h3>
+      <p>Basée à Lubumbashi, en République démocratique du Congo, <strong>TechnoAcademy</strong> est une plateforme dédiée à l'apprentissage pratique des technologies du numérique et des compétences professionnelles.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61589954400423" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/ingenieur.mka" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@ingnieur.mka" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://youtube.com/@kenedileonmikobi" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+    <div>
+      <h3>Nous trouver</h3>
+      <p>Avenue Mwela, au croisement de l'avenue Stela Ilunga, 2e parcelle, côté Météo, Lubumbashi, RDC</p>
+      <p><strong>Lundi, mercredi et samedi : ouvert</strong></p>
+      <a class="btn btn-line" href="contact.html">Voir la carte et nous contacter</a>
+    </div>
+    <div>
+      <h3>Support client</h3>
+      <p>Téléphone : <strong>+243 81 992 8332</strong></p>
+      <p>E-mail : <a href="mailto:contact@techno-academy.com"><strong>contact@techno-academy.com</strong></a></p>
+      <a href="etudiant.php" class="btn"><i class="fa-solid fa-user" aria-hidden="true"></i> Espace étudiant</a>
+    </div>
+  </div>
+  <p class="copy">© 2026 TechnoAcademy – Tous droits réservés.</p>
+</footer>
+
+<a href="#" id="waFloat" class="wa-float" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+
+<script>
+  const WA = '243819928332';
+  const wa = text => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+  const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  // Liste officielle des formations (même liste et mêmes prix que l'accueil)
+  const FORMATIONS = [
+    { t: "Initiation à l'informatique", ic: 'fa-computer', p: 20, k: 'informatique de base ordinateur windows système web debutant',
+      x: "Maîtrisez votre ordinateur, les systèmes d'exploitation et les bases du web." },
+    { t: 'Bureautique et outils métier', ic: 'fa-desktop', img: 'bureua.jpeg', p: 20, k: 'bureautique excel word powerpoint microsoft office',
+      x: 'Maîtrise de Microsoft Office (Word, Excel, PowerPoint) et des outils informatiques essentiels.' },
+    { t: 'Marketing digital', ic: 'fa-chart-line', img: 'mar.jpeg', p: 25, k: 'marketing digital reseaux sociaux vente publicité',
+      x: 'Stratégies de vente, réseaux sociaux et acquisition de clients.' },
+    { t: 'Programmation web et réseaux', ic: 'fa-code', img: 'pro.jpeg', p: 25, k: 'programmation web html js php python mysql réseaux serveurs code',
+      x: 'Développement web (HTML, JavaScript, PHP, Python), bases de données, gestion de serveurs et administration réseau. Un ordinateur est nécessaire.' },
+    { t: 'Création de contenu et design', ic: 'fa-pen-nib', img: 'crea.jpg', p: 20, k: 'design photoshop canva montage vidéo capcut premiere davinci branding',
+      x: 'Design graphique (Photoshop, Canva), montage vidéo professionnel (CapCut, Premiere Pro, DaVinci Resolve) et personal branding.' },
+    { t: 'Esthétique et cosmétologie', ic: 'fa-wand-magic-sparkles', img: 'est.jpg', p: 30, k: 'esthétique cosmétologie maquillage soin peau beauté prothèse ongles',
+      x: "Maquillage professionnel, soins de la peau, pose de prothèses ongulaires et gestion d'un institut de beauté." },
+    { t: 'Journalisme et communication', ic: 'fa-microphone', vid: 'journa', p: 20, k: 'journalisme communication radio télévision interview média',
+      x: "Journalisme radio et télévision, techniques d'interview, rédaction d'articles et éthique des médias." },
+    { t: 'Art oratoire et leadership', ic: 'fa-comments', vid: 'art', p: 25, k: 'art oratoire leadership parole public trac',
+      x: "Prise de parole en public, gestion du trac, leadership et communication d'impact." },
+    { t: 'Langue anglaise', ic: 'fa-language', vid: 'anglais', p: 25, k: 'anglais langue english affaires professionnel',
+      x: 'Anglais professionnel : expression orale et écrite adaptée au monde des affaires.' }
+  ];
+
+  const list = document.getElementById('list');
+  list.innerHTML = FORMATIONS.map(f => {
+    let media;
+    if (f.vid) media = `<div class="media"><video controls playsinline preload="none" aria-label="Présentation : ${esc(f.t)}"><source src="MEDIA/${f.vid}.mp4" type="video/mp4"></video></div>`;
+    else if (f.img) media = `<div class="media"><img src="MEDIA/${f.img}" alt="Formation : ${esc(f.t)}" width="600" height="210" loading="lazy"></div>`;
+    else media = `<div class="media icon" role="img" aria-label="${esc(f.t)}"><i class="fa-solid ${f.ic}" aria-hidden="true"></i></div>`;
+    const msg = `Bonjour TechnoAcademy, je souhaite m'informer sur la formation « ${f.t} ».`;
+    return `<article class="card" data-s="${esc(norm(f.t + ' ' + f.k + ' ' + f.x))}">${media}
+      <div class="info">
+        <h2><i class="fa-solid ${f.ic}" aria-hidden="true"></i> ${esc(f.t)}</h2>
+        <p>${esc(f.x)}</p>
+        <div class="meta"><span class="price">${f.p} $</span><span>Durée : 1 mois</span><span>Certificat inclus</span></div>
+        <div class="actions">
+          <a class="link l-main" href="register.php">S'inscrire</a>
+          <a class="link l-wa" href="${wa(msg)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question<span class="sr-only"> (ouvre WhatsApp)</span></a>
+        </div>
+      </div></article>`;
+  }).join('');
+
+  document.getElementById('waFloat').href = wa("Bonjour TechnoAcademy, j'ai une question sur vos formations.");
+
+  // Recherche insensible aux accents et à la casse
+  document.getElementById('q').addEventListener('input', e => {
+    const q = norm(e.target.value.trim());
+    let n = 0;
+    list.querySelectorAll('.card').forEach(c => {
+      const show = c.dataset.s.includes(q);
+      c.style.display = show ? '' : 'none';
+      if (show) n++;
+    });
+    document.getElementById('none').style.display = n ? 'none' : 'block';
+  });
+
+  // Thème sombre / clair
+  const btn = document.getElementById('themeToggle');
+  const icon = btn.querySelector('i'), label = btn.querySelector('span');
+  const render = () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    label.textContent = dark ? 'Mode clair' : 'Mode sombre';
+  };
+  render();
+  btn.addEventListener('click', () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', 'dark');
+    try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
+    render();
+  });
+</script>
+</body>
+</html>

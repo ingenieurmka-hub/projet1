@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechnoAcademy – Centre de formation et de compétences numériques en RDC</title>
+<meta name="description" content="Formations pratiques et certifiantes en marketing digital, programmation web, design, bureautique, anglais et plus. Apprenez où que vous soyez en RDC.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TechnoAcademy – Formations numériques en RDC">
+<meta property="og:description" content="Formations pratiques, certifiantes et accessibles. Inscrivez-vous dès aujourd'hui.">
+<meta property="og:image" content="MEDIA/cout.jpeg">
+<link rel="icon" href="MEDIA/logo.jpeg">
+<script>
+  try {
+    const t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --primary:#0f172a;--accent-blue:#2563eb;--blue-dark:#1d4ed8;
+  --cta:#c2410c;--cta-hover:#9a3412;--wa:#075E54;--wa-hover:#054a42;
+  --text:#334155;--muted:#64748b;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;
+  --r-md:12px;--r-lg:16px;--sh-sm:0 1px 3px rgba(0,0,0,.05);--sh-md:0 4px 12px -2px rgba(0,0,0,.08);
+}
+[data-theme="dark"]{
+  --primary:#f8fafc;--accent-blue:#60a5fa;--blue-dark:#3b82f6;--text:#cbd5e1;--muted:#94a3b8;
+  --bg:#0f172a;--card:#1e293b;--border:#334155;--sh-sm:0 1px 3px rgba(0,0,0,.3);--sh-md:0 4px 12px -2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,sans-serif}
+button,a,summary,.card{transition:background-color .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s}
+body{background:var(--bg);color:var(--text);line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
+:focus-visible{outline:3px solid var(--accent-blue);outline-offset:2px}
+img{max-width:100%;height:auto}
+
+header{background:var(--card);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
+.logo img{height:42px;width:auto;display:block}
+nav{display:flex;gap:12px;align-items:center}
+nav a{text-decoration:none;color:var(--text);font-weight:600;font-size:14px;padding:8px 14px;border-radius:8px}
+nav a:hover{background:var(--border)}
+nav a.signup{background:var(--cta);color:#fff}
+nav a.signup:hover{background:var(--cta-hover)}
+.theme-btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;gap:6px;align-items:center}
+.theme-btn:hover{background:var(--border)}
+
+.hero-banner{width:100%;height:380px;background:#000;overflow:hidden}
+.hero-banner img{width:100%;height:100%;object-fit:cover;display:block}
+
+.hero{background:var(--card);padding:40px 24px;text-align:center;border-bottom:1px solid var(--border)}
+.hero h1{font-size:2.2rem;font-weight:800;max-width:800px;margin:0 auto 12px;line-height:1.3;color:var(--primary)}
+.hero p{color:var(--muted);max-width:650px;margin:0 auto 24px;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cta);color:#fff;text-decoration:none;font-weight:700;border-radius:50px;padding:14px 32px;font-size:15px;border:2px solid var(--cta);cursor:pointer}
+.btn:hover{background:var(--cta-hover);border-color:var(--cta-hover)}
+.btn-cta{box-shadow:0 8px 20px rgba(194,65,12,.3)}
+.btn-line{background:transparent;border-color:#64748b;color:#fff}
+.btn-line:hover{background:#1e293b;border-color:#64748b}
+.hero .sub{display:block;margin-top:14px;font-size:14px}
+.hero .sub a{color:var(--accent-blue);font-weight:600}
+
+.stats{background:var(--card);padding:32px 24px;border-bottom:1px solid var(--border)}
+.stats-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.stat{padding:18px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);text-align:center}
+.stat i{font-size:24px;color:var(--accent-blue);margin-bottom:6px}
+.stat b{display:block;font-size:26px;font-weight:800;color:var(--primary)}
+.stat span{font-size:13px;color:var(--muted);font-weight:600}
+
+.trust{max-width:1200px;margin:40px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.trust-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);padding:20px;box-shadow:var(--sh-sm)}
+.trust-item i{font-size:22px;color:var(--accent-blue);margin-bottom:8px}
+.trust-item h3{font-size:16px;color:var(--primary);margin-bottom:4px}
+.trust-item p{font-size:14px;color:var(--muted)}
+
+.layout{max-width:1200px;width:100%;margin:32px auto 40px;padding:0 24px;display:grid;grid-template-columns:7fr 5fr;gap:32px;flex-grow:1}
+.col{display:flex;flex-direction:column;gap:24px;min-width:0}
+@media(max-width:992px){.layout{grid-template-columns:1fr}}
+
+details{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm)}
+details[open]{box-shadow:var(--sh-md)}
+summary{padding:18px 24px;font-size:17px;font-weight:700;color:var(--primary);cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;font-size:14px;color:var(--muted)}
+details[open] summary::after{transform:rotate(180deg)}
+.det{padding:24px;border-top:1px solid var(--border)}
+.section-title{font-size:20px;font-weight:800;color:var(--primary);margin-bottom:16px}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;box-shadow:var(--sh-sm)}
+
+.search{position:relative;margin-bottom:20px}
+.search i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search input{width:100%;padding:12px 16px 12px 42px;border-radius:var(--r-md);border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#noResult{display:none;text-align:center;color:var(--muted);padding:16px}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);margin-bottom:20px;overflow:hidden;box-shadow:var(--sh-sm)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.media{height:260px;background:#000}
+.media img,.media video{width:100%;height:100%;object-fit:contain;display:block}
+.info{padding:20px}
+.info h3{font-size:17px;color:var(--primary);margin-bottom:6px;display:flex;gap:10px;align-items:center}
+.info p{font-size:14px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.meta span{font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--border);border-radius:50px;padding:4px 12px;color:var(--text)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+@media(max-width:480px){.actions{grid-template-columns:1fr}}
+.link{display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 16px;border-radius:8px;text-align:center}
+.link:hover{opacity:.9}
+.l-main{background:var(--cta)}.l-main:hover{background:var(--cta-hover);opacity:1}
+.l-wa{background:var(--wa)}.l-wa:hover{background:var(--wa-hover);opacity:1}
+.l-blue{background:var(--accent-blue);color:#fff}
+[data-theme="dark"] .l-blue{background:#2563eb}
+
+.quote{background:var(--bg);padding:16px;border-radius:var(--r-md);margin-bottom:12px;border-left:3px solid var(--cta);font-size:14px}
+.stars{color:#b45309;font-size:12px;margin-bottom:4px}
+.faq p{font-size:14px;color:var(--muted)}
+.faq details{margin-bottom:12px;box-shadow:none}
+.faq summary{font-size:15px;padding:14px 18px}
+.partner-text{margin-bottom:18px;color:var(--muted);font-size:14px}
+
+footer{background:#0f172a;color:#cbd5e1;padding:48px 24px 24px;margin-top:auto}
+.foot{max-width:1200px;margin:0 auto 32px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+.foot h3{color:#fff;font-size:16px;margin-bottom:10px}
+.foot p{font-size:14px;margin-bottom:8px}
+.foot a{color:#cbd5e1}
+.foot .btn{margin-top:12px;padding:12px 24px;color:#fff}
+.foot .social{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:14px}
+.copy{text-align:center;border-top:1px solid #1e293b;padding-top:20px;font-size:13px;max-width:1200px;margin:0 auto}
+@media(max-width:800px){.foot{grid-template-columns:1fr}}
+@media(max-width:600px){
+  header{padding:10px 16px;flex-direction:column;gap:8px;position:static}
+  nav{flex-wrap:wrap;justify-content:center}
+  .hero-banner{height:220px}.hero h1{font-size:1.6rem}.media{height:220px}
+}
+
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:1100;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:14px 18px;border-radius:50px;display:flex;gap:8px;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,.3);padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+.wa-float:hover{background:var(--wa-hover)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><img src="MEDIA/logo.jpeg" alt="Logo TechnoAcademy" width="120" height="42"></a>
+  <nav aria-label="Navigation principale">
+    <button class="theme-btn" id="themeToggle" type="button" aria-label="Changer de thème">
+      <i class="fa-solid fa-moon" aria-hidden="true"></i> <span>Mode sombre</span>
+    </button>
+    <a href="index.html" aria-current="page">Accueil</a>
+    <a href="formations.html">Formations</a>
+    <a href="register.php" class="signup">S'inscrire</a>
+  </nav>
+</header>
+
+<section class="hero-banner">
+  <img src="MEDIA/cout.jpeg" alt="Étudiants de TechnoAcademy en formation" width="1200" height="380" loading="eager">
+</section>
+
+<section class="hero">
+  <h1>Développez vos compétences professionnelles en RDC</h1>
+  <p>Des formations pratiques, certifiantes et accessibles où que vous soyez.</p>
+  <a href="register.php" class="btn btn-cta"><i class="fa-solid fa-rocket" aria-hidden="true"></i> S'inscrire maintenant</a>
+  <span class="sub">Une question ? <a href="#" class="wa-general">Écrivez-nous sur WhatsApp</a></span>
+</section>
+
+<section class="stats" aria-label="Chiffres clés">
+  <div class="stats-grid">
+    <div class="stat"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><b>500+</b><span>Étudiants formés</span></div>
+    <div class="stat"><i class="fa-solid fa-book-open" aria-hidden="true"></i><b>8</b><span>Formations</span></div>
+    <div class="stat"><i class="fa-solid fa-award" aria-hidden="true"></i><b>95 %</b><span>Satisfaction</span></div>
+    <div class="stat"><i class="fa-solid fa-globe" aria-hidden="true"></i><b>RDC</b><span>Accessible partout</span></div>
+  </div>
+</section>
+
+<section class="trust" aria-label="Pourquoi choisir TechnoAcademy">
+  <div class="trust-item"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><h3>Compétences métier</h3><p>Des formations axées sur la pratique professionnelle directe.</p></div>
+  <div class="trust-item"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i><h3>Projets réels</h3><p>Appliquez vos cours à travers des projets concrets.</p></div>
+  <div class="trust-item"><i class="fa-solid fa-certificate" aria-hidden="true"></i><h3>Certificat</h3><p>Un certificat valorisable sur le marché de l'emploi.</p></div>
+  <div class="trust-item"><i class="fa-solid fa-user-gear" aria-hidden="true"></i><h3>Accompagnement</h3><p>Un suivi personnalisé par un mentor dédié.</p></div>
+</section>
+
+<main class="layout">
+  <div class="col">
+    <section class="panel" aria-labelledby="filieres">
+      <h2 class="section-title" id="filieres"><i class="fa-solid fa-layer-group" aria-hidden="true" style="color:var(--accent-blue);margin-right:8px"></i>Nos formations</h2>
+
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <label for="deptSearch" class="sr-only">Rechercher une formation ou une compétence</label>
+        <input type="search" id="deptSearch" placeholder="Rechercher une formation ou une compétence…">
+      </div>
+
+      <div class="card" data-formation="Marketing digital" data-keywords="marketing digital vente acquisition publicité commercial">
+        <div class="media"><img src="MEDIA/mar.jpeg" alt="Formation en marketing digital" width="600" height="260" loading="lazy"></div>
+        <div class="info">
+          <h3><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Marketing digital</h3>
+          <p>Marketing digital : stratégies de vente et acquisition de clients.</p>
+          <div class="meta"><span>Durée : 1 mois</span><span>Prix : 25 $</span></div>
+          <div class="actions"><a class="link l-main" href="register.php">S'inscrire</a><a class="link l-wa wa-formation" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-formation="Programmation web et réseaux" data-keywords="programmation web php mysql réseaux développement code">
+        <div class="media"><img src="MEDIA/pro.jpeg" alt="Formation en programmation web et réseaux" width="600" height="260" loading="lazy"></div>
+        <div class="info">
+          <h3><i class="fa-solid fa-code" aria-hidden="true"></i> Programmation web et réseaux</h3>
+          <p>Développement web, bases de données, gestion de serveurs et administration réseau.</p>
+          <div class="meta"><span>Durée : 1 mois</span><span>Prix : 25 $</span></div>
+          <div class="actions"><a class="link l-main" href="register.php">S'inscrire</a><a class="link l-wa wa-formation" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-formation="Création de contenu et design" data-keywords="création contenu design photoshop canva montage vidéo capcut premiere">
+        <div class="media"><img src="MEDIA/crea.jpg" alt="Formation en création de contenu et design" width="600" height="260" loading="lazy"></div>
+        <div class="info">
+          <h3><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Création de contenu et design</h3>
+          <p>Design graphique (Photoshop, Canva), montage vidéo professionnel (CapCut, Premiere Pro, DaVinci Resolve) et personal branding.</p>
+          <div class="meta"><span>Durée : 1 mois</span><span>Prix : 20 $</span></div>
+          <div class="actions"><a class="link l-main" href="register.php">S'inscrire</a><a class="link l-wa wa-formation" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-formation="Esthétique et cosmétologie" data-keywords="esthétique cosmétologie maquillage soin peau beauté prothèse ongulaire">
+        <div class="media"><img src="MEDIA/est.jpg" alt="Formation en esthétique et cosmétologie" width="600" height="260" loading="lazy"></div>
+        <div class="info">
+          <h3><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Esthétique et cosmétologie</h3>
+          <p>Maquillage professionnel, soins de la peau, pose de prothèses ongulaires et gestion d'un institut de beauté.</p>
+          <div class="meta"><span>Durée : 1 mois</span><span>Prix : 30 $</span></div>
+          <div class="actions"><a class="link l-main" href="register.php">S'inscrire</a><a class="link l-wa wa-formation" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-formation="Bureautique et outils métier" data-keywords="bureautique excel word microsoft office outils métier">
+        <div class="media"><img src="MEDIA/bureua.jpeg" alt="Formation en bureautique" width="600" height="260" loading="lazy"></div>
+        <div class="info">
+          <h3><i class="fa-solid fa-desktop" aria-hidden="true"></i> Bureautique et outils métier</h3>
+          <p>Maîtrise de Microsoft Office (Word, Excel) et des outils informatiques essentiels.</p>
+          <div class="meta"><span>Durée : 1 mois</span><span>Prix : 20 $</span></div>
+          <div class="actions"><a class="link l-main" href="register.php">S'inscrire</a><a class="link l-wa wa-formation" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-formation="Journalisme et communication" data-keywords="journalisme communication radio tv média interview">
+        <div class="media"><video controls playsinline preload="metadata" aria-label="Présentation de la formation en journalisme"><source src="MEDIA/journa.mp4" type="video/mp4"><source src="MEDIA/journa.webm" type="video/webm"></video></div>
+        <div class="info">
+          <h3><i class="fa-solid fa-microphone" aria-hidden="true"></i> Journalisme et communication</h3>
+          <p>Journalisme radio et télévision, techniques d'interview, rédaction d'articles et éthique des médias.</p>
+          <div class="meta"><span>Durée : 1 mois</span><span>Prix : 20 $</span></div>
+          <div class="actions"><a class="link l-main" href="register.php">S'inscrire</a><a class="link l-wa wa-formation" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-formation="Art oratoire et leadership" data-keywords="art oratoire leadership parole public communication">
+        <div class="media"><video controls playsinline preload="metadata" aria-label="Présentation de la formation en art oratoire"><source src="MEDIA/art.mp4" type="video/mp4"></video></div>
+        <div class="info">
+          <h3><i class="fa-solid fa-comments" aria-hidden="true"></i> Art oratoire et leadership</h3>
+          <p>Prise de parole en public, gestion du trac, leadership et communication d'impact.</p>
+          <div class="meta"><span>Durée : 1 mois</span><span>Prix : 25 $</span></div>
+          <div class="actions"><a class="link l-main" href="register.php">S'inscrire</a><a class="link l-wa wa-formation" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question</a></div>
+        </div>
+      </div>
+
+      <div class="card" data-formation="Langue anglaise" data-keywords="anglais langue english affaires expression">
+        <div class="media"><video controls playsinline preload="metadata" aria-label="Présentation de la formation en anglais"><source src="MEDIA/anglais.mp4" type="video/mp4"></video></div>
+        <div class="info">
+          <h3><i class="fa-solid fa-language" aria-hidden="true"></i> Langue anglaise</h3>
+          <p>Anglais professionnel : expression orale et écrite adaptée aux affaires.</p>
+          <div class="meta"><span>Durée : 1 mois</span><span>Prix : 25 $</span></div>
+          <div class="actions"><a class="link l-main" href="register.php">S'inscrire</a><a class="link l-wa wa-formation" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Poser une question</a></div>
+        </div>
+      </div>
+
+      <p id="noResult" role="status">Aucune formation ne correspond à votre recherche.</p>
+      <a href="formations.html" class="link l-blue">Voir toutes les formations</a>
+    </section>
+
+    <section class="panel faq" aria-labelledby="faq-t">
+      <h2 class="section-title" id="faq-t">Questions fréquentes</h2>
+      <details><summary>Comment payer ma formation ?</summary><div class="det"><p>Par mobile money (M-Pesa, Airtel Money, Orange Money) ou en espèces au centre. Un reçu vous est remis.</p></div></details>
+      <details><summary>Faut-il un ordinateur ?</summary><div class="det"><p>Un téléphone Android suffit pour la plupart des formations. Pour la programmation web, un ordinateur est nécessaire, car travailler sur téléphone est beaucoup plus difficile.</p></div></details>
+      <details><summary>Comment obtenir mon certificat ?</summary><div class="det"><p>Il suffit de suivre la formation et de réussir le projet final. Le certificat vous est ensuite remis.</p></div></details>
+      <details><summary>Quand commence la prochaine session ?</summary><div class="det"><p>La prochaine session commence le 15 octobre. Il reste 50 places disponibles.</p></div></details>
+    </section>
+  </div>
+
+  <div class="col">
+    <details open style="border-color:var(--wa)">
+      <summary style="color:var(--wa)"><span><i class="fa-solid fa-globe" aria-hidden="true"></i> Service de création web</span></summary>
+      <div class="det">
+        <p style="font-weight:600;margin-bottom:8px">Besoin d'un site web sur mesure ?</p>
+        <p style="font-size:14px;color:var(--muted)">Confiez la réalisation de votre plateforme web professionnelle à notre équipe d'experts basée en RDC.</p>
+        <a class="link l-wa" id="waDevis" href="#" target="_blank" rel="noopener" style="margin-top:12px"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Demander un devis</a>
+      </div>
+    </details>
+
+    <section class="panel" aria-labelledby="avis">
+      <h2 class="section-title" id="avis">Avis de nos apprenants</h2>
+      <div class="quote"><div class="stars" role="img" aria-label="5 étoiles sur 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p><b>Christian :</b> « Grâce à TechnoAcademy, j'ai maîtrisé Excel et décroché un emploi d'assistant. »</p></div>
+      <div class="quote"><div class="stars" role="img" aria-label="5 étoiles sur 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p><b>Sarah :</b> « J'apprends de façon très flexible depuis mon téléphone, à Kinshasa. »</p></div>
+    </section>
+
+    <section class="panel" aria-labelledby="part">
+      <h2 class="section-title" id="part">Devenez partenaire</h2>
+      <p class="partner-text">Entreprise, école, association ou église : formons ensemble vos équipes et vos jeunes. Écrivez-nous pour construire un partenariat.</p>
+      <div class="actions">
+        <a class="link l-main" id="partner" href="mailto:contact@techno-academy.com?subject=Proposition%20de%20partenariat"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Proposer un partenariat</a>
+        <a class="link l-wa" id="partnerWa" href="https://wa.me/243819928332" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Nous contacter</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <div>
+      <h3>À propos de TechnoAcademy</h3>
+      <p>Basée à Lubumbashi, en République démocratique du Congo, <strong>TechnoAcademy</strong> est une plateforme dédiée à l'apprentissage pratique des technologies du numérique et des compétences professionnelles.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61589954400423" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/ingenieur.mka" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@ingnieur.mka" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://youtube.com/@kenedileonmikobi" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+    <div>
+      <h3>Nous trouver</h3>
+      <p>Avenue Mwela, au croisement de l'avenue Stela Ilunga, 2e parcelle, côté Météo, Lubumbashi, RDC</p>
+      <p><strong>Lundi, mercredi et samedi : ouvert</strong></p>
+      <a class="btn btn-line" href="contact.html">Voir la carte et nous contacter</a>
+    </div>
+    <div>
+      <h3>Support client</h3>
+      <p>Téléphone : <strong>+243 81 992 8332</strong></p>
+      <p>E-mail : <a href="mailto:contact@techno-academy.com"><strong>contact@techno-academy.com</strong></a></p>
+      <a href="etudiant.php" class="btn"><i class="fa-solid fa-user" aria-hidden="true"></i> Espace étudiant</a>
+    </div>
+  </div>
+  <p class="copy">© 2026 TechnoAcademy – Tous droits réservés.</p>
+</footer>
+
+<a href="#" class="wa-float wa-general" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+
+<script>
+  const WA = '243819928332';
+  const wa = text => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+
+  document.querySelectorAll('.card').forEach(card => {
+    const link = card.querySelector('.wa-formation');
+    if (link) link.href = wa(`Bonjour TechnoAcademy, je souhaite m'informer sur la formation « ${card.dataset.formation} ».`);
+  });
+  document.querySelectorAll('.wa-general').forEach(a => {
+    a.href = wa("Bonjour TechnoAcademy, j'ai une question sur vos formations.");
+  });
+  document.getElementById('waDevis').href = wa("Bonjour, j'ai besoin d'un devis pour un site web.");
+  document.getElementById('partnerWa').href = wa("Bonjour TechnoAcademy, je souhaite proposer un partenariat.");
+
+  const btn = document.getElementById('themeToggle');
+  const icon = btn.querySelector('i'), label = btn.querySelector('span');
+  const render = () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    label.textContent = dark ? 'Mode clair' : 'Mode sombre';
+  };
+  render();
+  btn.addEventListener('click', () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', 'dark');
+    try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
+    render();
+  });
+
+  const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  document.getElementById('deptSearch').addEventListener('input', e => {
+    const q = norm(e.target.value.trim());
+    let visible = 0;
+    document.querySelectorAll('.card').forEach(card => {
+      const hay = norm((card.dataset.keywords || '') + ' ' + card.textContent);
+      const show = hay.includes(q);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('noResult').style.display = visible ? 'none' : 'block';
+  });
+</script>
+</body>
+</html>
